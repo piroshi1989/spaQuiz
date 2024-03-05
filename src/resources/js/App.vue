@@ -11,4 +11,5 @@ const addCount = () => {
 
 <template>
     <button @click="addCount">{{ count }} 回クリックしましたよ！</button>
+    <router-view />
 </template>
