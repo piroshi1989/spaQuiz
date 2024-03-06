@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "NasuM-Regular.ttf";
+    src: local("NasuM-Regular.ttf"), url(@/assets/fonts/NasuM-Regular.ttf) format("truetype");
+  }
+  
+  div {
+    font-family: "NasuM-Regular.ttf";
+  }
+  
+  $white: #fff;
+  $thin-gray:#6f7882;
+  $gray: #C2CBD3;
+  $sidebar-header-blue: #a3c0da;
+  $twitter-blue: #00aced;
+  $facebook-blue: #3B5998;
+  $line-green: #00B900;
+  $linedin-blue: #0e76a8;
+  
+  $pc: 992px;
+  $sp: 480px;
+  
+  @mixin pc {
+    @media (max-width: ($pc)) {
+      @content;
+    }
+  }
+  
+  @mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .col-sm-8 {
+      width: 60%;
+    }
+  
+    .col-sm-4 {
+      width: 37%;
+    }
+  }
+  
