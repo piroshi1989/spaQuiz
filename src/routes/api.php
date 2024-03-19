@@ -2,6 +2,15 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\InformationController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\QuizController;
+use App\Http\Controllers\Api\KeywordController;
+use App\Http\Controllers\Api\RankingController;
+use App\Http\Controllers\Api\MeController;
+use App\Http\Controllers\Auth\ApiTokenLoginController;
+use App\Http\Controllers\Auth\ApiTokenRegisterController;
+// use App\Http\Controllers\Auth\ApiTokenLogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +22,15 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/login', ApiTokenLoginController::class);
+Route::post('/register', ApiTokenRegisterController::class);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/me', MeController::class);
 });
+
+Route::resource('/information', InformationController::class);
+Route::resource('/categories', CategoryController::class);
+Route::resource('/quizzes', QuizController::class);
+Route::resource('/keywords', KeywordController::class);
+Route::resource('/rankings', RankingController::class);

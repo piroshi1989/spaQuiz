@@ -6,7 +6,7 @@
     </h2>
     <form>
       <label>
-        <input type="checkbox" name="categories[]" value="1" checked />
+        <input type="checkbox" name="category[]" value="1" checked />
         ビジネスマナー
       </label>
       <label>

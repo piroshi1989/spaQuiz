@@ -16,7 +16,7 @@ RUN docker-php-ext-install pdo_mysql mysqli exif
 RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/bin/composer
 
 # Node.jsとNPMのインストール
-ENV NODE_VERSION=20.9.0
+ENV NODE_VERSION=18.17.0
 RUN groupadd -g 1000 node \
     && useradd -u 1000 -g node -m -s /bin/bash node \
     && mkdir /home/node/.nvm
